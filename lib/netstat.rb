@@ -43,13 +43,14 @@ module Netstat
   end
 
   # Takes a hash with the key and value to search for and returns all
-  # matches.
+  # matches.  If there are multiple parameters, has an AND behavior.
   def self.filter(params)
     return Netstat.read_tcp.select do |sock|
-      retval = false
+      retval = true
       params.keys.each do |k|
-        if sock[k] && (sock[k].to_s == params[k].to_s)
-          retval = true
+        unless sock[k] && (sock[k].to_s == params[k].to_s)
+          retval = false
+          break
         end
       end
       retval
