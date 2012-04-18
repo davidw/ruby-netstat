@@ -14,12 +14,12 @@ Gem::Specification.new do |s|
   s.email = %q{davidw@dedasys.com}
   s.extra_rdoc_files = [
     "LICENSE.txt",
-    "README.md",
+    "README.rdoc",
   ]
   s.files = [
     "Gemfile",
     "LICENSE.txt",
-    "README.md",
+    "README.rdoc",
     "Rakefile",
     "VERSION",
     "lib/netstat.rb",
